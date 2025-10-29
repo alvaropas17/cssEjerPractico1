@@ -1,110 +1,98 @@
 <!DOCTYPE html>
 <html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Álvaro Pastor</title>
+    <link rel="stylesheet" href="./css/base/normalize.css">
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flexbox Website Boilerplate</title>
-    <link rel="stylesheet" href="./node_modules/normalize.css/normalize.css">
-    <link rel="stylesheet" href="/styles.css">
-</head>
-
-<body>
+  <body>
     <div id="container">
-        <!-- Header -->
-        <header class="header">
-            <div class="logo">
-                <h1>Álvaro Pastor</h1>
+      <!-- Header -->
+      <header class="header">
+        <div class="logo">
+          <h1>Álvaro Pastor</h1>
+        </div>
+        <nav class="topnav">
+          <a href="#home">Inicio</a>
+          <a href="#news">Noticias</a>
+          <a href="#contact">Contacto</a>
+          <a href="#about">Acerca de</a>
+        </nav>
+        <div id="usuario">
+          <h1>Usuario</h1>
+        </div>
+      </header>
+
+      <!-- Main Content Area -->
+      <main class="main-content">
+        <div id="buzon">
+          <ul>
+            <li>Buzón 1</li>
+            <li>Buzón 2</li>
+            <li>Buzón 3</li>
+            <li>Buzón 4</li>
+            <li>Buzón 5</li>
+            <li>Buzón 6</li>
+            <li>Buzón 7</li>
+            <li>Buzón 8</li>
+            <li>Buzón 9</li>
+            <li>Buzón 10</li>
+          </ul>
+        </div>
+        <!-- Content Sections -->
+        <section class="content-section">
+          <div class="content-grid">
+            <div class="content-card">
+              <h3>Inteligencia artificial</h3>
+              <p>Todo lo que debes saber sobre IA</p>
             </div>
-
-            <nav class="navigation">
-                <ul>
-                    <li><a href="#inicio">Inicio</a></li>
-                    <li><a href="#acerca">Acerca</a></li>
-                    <li><a href="#servicios">Servicios</a></li>
-                    <li><a href="#contacto">Contacto</a></li>
-                </ul>
-            </nav>
-            <div id="usuario">Usuario</div>
-
-        </header>
-
-        <!-- Main Content Area -->
-        <main class="main-content">
-            <!-- Hero Section -->
-            <!-- <section class="hero">
-                <div class="hero-content">
-                    <h2>Bienvenido a nuestro sitio web</h2>
-                    <p>Esta es una plantilla base usando Flexbox para el diseño responsive</p>
-                    <button class="cta-button">Comenzar</button>
-                </div>
-            </section> -->
-
-
-            <div id="buzon">
-                <ul>
-                    <li>Buzón 1</li>
-                    <li>Buzón 2</li>
-                    <li>Buzón 3</li>
-                    <li>Buzón 4</li>
-                    <li>Buzón 5</li>
-                    <li>Buzón 6</li>
-                    <li>Buzón 7</li>
-                    <li>Buzón 8</li>
-                    <li>Buzón 9</li>
-                    <li>Buzón 10</li>
-                </ul>
+            <div class="content-card">
+              <h3>Responsive</h3>
+              <p>Optimizado para dispositivos móviles y de escritorio</p>
             </div>
-            <!-- Content Sections -->
-            <section class="content-section">
-                <div class="content-grid">
-                    <div class="content-card">
-                        <h3>Diseño Flexible</h3>
-                        <p>Utiliza Flexbox para crear layouts adaptativos y modernos</p>
-                    </div>
-                    <div class="content-card">
-                        <h3>Responsive</h3>
-                        <p>Optimizado para dispositivos móviles y de escritorio</p>
-                    </div>
-                    <div class="content-card">
-                        <h3>Moderno</h3>
-                        <p>Diseño limpio y profesional listo para personalizar</p>
-                    </div>
-                </div>
-            </section>
-        </main>
-
-        <!-- Sidebar -->
-        <aside class="sidebar">
-            <div class="sidebar-content">
-                <h3>Información Adicional</h3>
-                <p>Esta barra lateral utiliza Flexbox para posicionarse correctamente</p>
-                <ul>
-                    <li>Enlaces útiles</li>
-                    <li>Recursos</li>
-                    <li>Documentación</li>
-                </ul>
+            <div class="content-card">
+              <h3>Moderno</h3>
+              <p>Diseño limpio y profesional listo para personalizar</p>
             </div>
-        </aside>
+          </div>
+        </section>
+      </main>
 
-        <!-- Footer -->
-        <footer class="footer">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h4>Contacto</h4>
-                    <p>info@ejemplo.com</p>
-                </div>
-                <div class="footer-section">
-                    <h4>Siguenos</h4>
-                    <p>Redes sociales</p>
-                </div>
-                <div class="footer-section">
-                    <h4>Copyright</h4>
-                    <p>&copy; 2025 Mi Sitio Web</p>
-                </div>
-            </div>
-        </footer>
+      <!-- Sidebar -->
+      <aside class="sidebar">
+        <div class="sidebar-content">
+          <h3>Información Adicional</h3>
+          <p>
+            Esta barra lateral utiliza Flexbox para posicionarse correctamente
+          </p>
+          <ul>
+            <li>Enlaces útiles</li>
+            <li>Recursos</li>
+            <li>Documentación</li>
+          </ul>
+        </div>
+      </aside>
+
+      <!-- Footer -->
+      <footer class="footer">
+        <div class="footer-content">
+          <div class="footer-section">
+            <h4>Contacto</h4>
+            <p>info@ejemplo.com</p>
+          </div>
+          <div class="footer-section">
+            <h4>Siguenos</h4>
+            <p>Redes sociales</p>
+          </div>
+          <div class="footer-section">
+            <h4>Copyright</h4>
+            <p>&copy; 2025 Mi Sitio Web</p>
+          </div>
+        </div>
+      </footer>
     </div>
-</body>
-
+  </body>
 </html>
