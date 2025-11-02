@@ -3,96 +3,302 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Álvaro Pastor</title>
+    <title>2050 Detroit: Become Human</title>
+    <!-- Para resetear los estilos -->
     <link rel="stylesheet" href="./css/base/normalize.css" />
     <link rel="stylesheet" href="./css/styles.css" />
+    <link rel="stylesheet" href="./css/header_navbar.css" />
+    <link rel="stylesheet" href="./css/botones.css" />
+    <link rel="stylesheet" href="./css/footer.css" />
+    <script src="./js/script.js" defer></script>
   </head>
-
   <body>
-    <div id="container">
-      <!-- Header -->
-      <header class="header">
-        <div class="logo">
-          <h1>Álvaro Pastor</h1>
-        </div>
-        <nav class="topnav">
-          <a href="#home">Inicio</a>
-          <a href="#news">Noticias</a>
-          <a href="#contact">Contacto</a>
-          <a href="#about">Acerca de</a>
-        </nav>
-        <div id="usuario">
-          <h1>Usuario</h1>
+    <div id="body_div">
+      <!-- Super Responsive Mega Menu + Theme Switcher + Particles -->
+      <header class="site-header" role="banner">
+        <div class="wrap">
+          <a class="brand" href="#" aria-label="Home">
+            <span class="logo" aria-hidden="true">
+              <svg
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M4 12L12 4L20 12L12 20L4 12Z"
+                  stroke="white"
+                  stroke-width="2"
+                />
+                <circle cx="12" cy="12" r="2" fill="white" />
+              </svg>
+            </span>
+            <strong>AI Land</strong>
+          </a>
+          <button
+            class="burger"
+            aria-controls="mobile-drawer"
+            aria-expanded="false"
+          >
+            <svg
+              width="18"
+              height="18"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              aria-hidden="true"
+            >
+              <path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z" />
+            </svg>
+            Menu
+          </button>
+          <nav aria-label="Primary">
+            <ul class="nav-list">
+              <!-- Products (Mega) -->
+              <li class="nav-item" data-type="mega" aria-expanded="false">
+                <a
+                  class="nav-link"
+                  href="#"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                >
+                  Products
+                  <svg class="caret" viewBox="0 0 10 6" aria-hidden="true">
+                    <path
+                      d="M1 1l4 4l4-4"
+                      stroke="currentColor"
+                      stroke-width="1.6"
+                      fill="none"
+                      stroke-linecap="round"
+                    />
+                  </svg>
+                </a>
+                <div class="panel" role="menu" aria-label="Products">
+                  <div class="menu-grid">
+                    <div class="menu-col">
+                      <a class="item" href="#">
+                        <span class="icn">🧭</span>
+                        <span>
+                          <span class="label">Analytics Cloud</span><br />
+                          <span class="sub"
+                            >Live dashboards, KPIs, forecasting</span
+                          >
+                        </span>
+                      </a>
+                      <a class="item" href="#">
+                        <span class="icn">🤖</span>
+                        <span>
+                          <span class="label">AI Studio</span><br />
+                          <span class="sub">ML pipelines & inference</span>
+                        </span>
+                      </a>
+                      <a class="item" href="#">
+                        <span class="icn">🔐</span>
+                        <span>
+                          <span class="label">Secure Vault</span><br />
+                          <span class="sub"
+                            >Key management, rotation, audit</span
+                          >
+                        </span>
+                      </a>
+                    </div>
+                    <div class="menu-col">
+                      <a class="item" href="#">
+                        <span class="icn">🧩</span>
+                        <span>
+                          <span class="label">Integrations Hub</span><br />
+                          <span class="sub">500+ connectors & webhooks</span>
+                        </span>
+                      </a>
+                      <a class="item" href="#">
+                        <span class="icn">⚡️</span>
+                        <span>
+                          <span class="label">Edge Functions</span>
+                          <span class="sub">Ultra-low latency at the edge</span>
+                        </span>
+                      </a>
+                      <a class="item" href="#">
+                        <span class="icn">📦</span>
+                        <span>
+                          <span class="label">Subscriptions</span>
+                          <span class="sub">Recurring payments & billing</span>
+                        </span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <!-- Solutions -->
+              <li class="nav-item" aria-expanded="false">
+                <a
+                  class="nav-link"
+                  href="#"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                >
+                  Solutions
+                  <svg class="caret" viewBox="0 0 10 6" aria-hidden="true">
+                    <path
+                      d="M1 1l4 4l4-4"
+                      stroke="currentColor"
+                      stroke-width="1.6"
+                      fill="none"
+                      stroke-linecap="round"
+                    />
+                  </svg>
+                </a>
+                <div class="panel" role="menu" aria-label="Solutions">
+                  <ul>
+                    <li><a href="#">eCommerce</a></li>
+                    <li><a href="#">SaaS B2B</a></li>
+                    <li><a href="#">FinTech</a></li>
+                    <li><a href="#">EduTech</a></li>
+                  </ul>
+                </div>
+              </li>
+              <!-- Resources -->
+              <li class="nav-item" aria-expanded="false">
+                <a
+                  class="nav-link"
+                  href="#"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                >
+                  Resources
+                  <svg class="caret" viewBox="0 0 10 6" aria-hidden="true">
+                    <path
+                      d="M1 1l4 4l4-4"
+                      stroke="currentColor"
+                      stroke-width="1.6"
+                      fill="none"
+                      stroke-linecap="round"
+                    />
+                  </svg>
+                </a>
+                <div class="panel" role="menu" aria-label="Resources">
+                  <ul>
+                    <li><a href="#">Documentation</a></li>
+                    <li><a href="#">Tutorials</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Status</a></li>
+                  </ul>
+                </div>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Pricing</a>
+              </li>
+            </ul>
+          </nav>
+          <div class="utils">
+            <button
+              class="particles-toggle"
+              id="particles-toggle"
+              aria-pressed="true"
+              title="Toggle background particles"
+            >
+              Particles
+            </button>
+            <button
+              class="theme-toggle"
+              id="theme-toggle"
+              aria-label="Toggle colour theme"
+            >
+              <svg
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <path d="M12 3a9 9 0 0 0 9 9 9 9 0 1 1-9-9z" />
+              </svg>
+              <span class="mode" id="theme-mode-label">System</span>
+            </button>
+            <button class="btn">Start free</button>
+          </div>
         </div>
       </header>
-
-      <!-- Main Content Area -->
-      <main class="main-content">
-        <div id="buzon">
-          <ul>
-            <li>Buzón 1</li>
-            <li>Buzón 2</li>
-            <li>Buzón 3</li>
-            <li>Buzón 4</li>
-            <li>Buzón 5</li>
-            <li>Buzón 6</li>
-            <li>Buzón 7</li>
-            <li>Buzón 8</li>
-            <li>Buzón 9</li>
-            <li>Buzón 10</li>
-          </ul>
-        </div>
-        <!-- Content Sections -->
-        <section class="content-section">
-          <div class="content-grid">
-            <div class="content-card">
-              <h3>Inteligencia artificial</h3>
-              <p>Todo lo que debes saber sobre IA</p>
-            </div>
-            <div class="content-card">
-              <h3>Responsive</h3>
-              <p>Optimizado para dispositivos móviles y de escritorio</p>
-            </div>
-            <div class="content-card">
-              <h3>Moderno</h3>
-              <p>Diseño limpio y profesional listo para personalizar</p>
-            </div>
-          </div>
-        </section>
-      </main>
-
-      <!-- Sidebar -->
-      <aside class="sidebar">
-        <div class="sidebar-content">
-          <h3>Información Adicional</h3>
+      <!-- Background particles canvas -->
+      <!-- <canvas id="particles" aria-hidden="true"></canvas> -->
+      <main>
+        <section class="hero">
+          <h1>Metrópolis 2050</h1>
           <p>
-            Esta barra lateral utiliza Flexbox para posicionarse correctamente
+            Bienvenidos a la ciudad del futuro donde humanos y robots conviven
+            en una sociedad avanzada.
           </p>
-          <ul>
-            <li>Enlaces útiles</li>
-            <li>Recursos</li>
-            <li>Documentación</li>
-          </ul>
+          <!-- <div class="cta-row">
+            <button class="btn">Create account</button>
+            <button class="btn ghost">View documentation</button>
+          </div> -->
+        </section>
+
+        <section class="utils"></section>
+      </main>
+      <!-- Mobile Drawer -->
+      <div class="drawer-backdrop" id="drawer-backdrop" hidden></div>
+      <aside
+        class="drawer"
+        id="mobile-drawer"
+        aria-hidden="true"
+        aria-label="Mobile menu"
+      >
+        <div class="section">
+          <h4>Products</h4>
+          <a href="#"><span class="icn">🧭</span> Analytics Cloud</a>
+          <a href="#"><span class="icn">🤖</span> AI Studio</a>
+          <a href="#"><span class="icn">🔐</span> Secure Vault</a>
+          <a href="#"><span class="icn">🧩</span> Integrations Hub</a>
+          <a href="#"><span class="icn">⚡️</span> Edge Functions</a>
+          <a href="#"><span class="icn">📦</span> Subscriptions</a>
+        </div>
+        <div class="section">
+          <h4>Solutions</h4>
+          <a href="#">eCommerce</a>
+          <a href="#">SaaS B2B</a>
+          <a href="#">FinTech</a>
+          <a href="#">EduTech</a>
+        </div>
+        <div class="section">
+          <h4>Resources</h4>
+          <a href="#">Documentation</a>
+          <a href="#">Tutorials</a>
+          <a href="#">Blog</a>
+          <a href="#">Status</a>
+        </div>
+        <div class="section">
+          <a
+            href="#"
+            class="btn"
+            style="display: inline-block; text-align: center"
+            >Start free</a
+          >
+        </div>
+        <div class="section">
+          <h4>Appearance</h4>
+          <a href="#" id="theme-light">🌤️ Light</a>
+          <a href="#" id="theme-dark">🌙 Dark</a>
+          <a href="#" id="theme-system">🖥️ System</a>
         </div>
       </aside>
-
-      <!-- Footer -->
-      <footer class="footer">
-        <div class="footer-content">
-          <div class="footer-section">
-            <h4>Contacto</h4>
-            <p>info@ejemplo.com</p>
-          </div>
-          <div class="footer-section">
-            <h4>Siguenos</h4>
-            <p>Redes sociales</p>
-          </div>
-          <div class="footer-section">
-            <h4>Copyright</h4>
-            <p>&copy; 2025 Mi Sitio Web</p>
-          </div>
-        </div>
-      </footer>
     </div>
+
+    <footer>
+      <div>
+        <!-- <div id="cabecera">Sobre mí</div> -->
+        <a href="">Quién soy</a>
+        <a href="">Sobre este proyecto</a>
+      </div>
+      <div>
+        <!-- <div id="cabecera">Redes sociales</div> -->
+        <a href="">Instagram</a>
+        <a href="">Twitter</a>
+        <a href="">Github</a>
+      </div>
+    </footer>
   </body>
 </html>
