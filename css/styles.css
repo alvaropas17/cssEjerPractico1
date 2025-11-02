@@ -1,241 +1,958 @@
+/* =====================================================
+   FLEXBOX WEBSITE BOILERPLATE - CSS STYLES
+   ===================================================== */
+
 :root {
+  /* Paleta de colores futurista */
   --color-bg: #0a0a1f; /* Fondo Azul Oscuro/Negro */
   --color-primary: #00ffc2; /* Cian Eléctrico (Acento) */
   --color-secondary: #ff4788; /* Magenta (Alerta/Highlight) */
+  --color-tertiary: #6366f1; /* Índigo moderno */
   --color-text: #e0e0ff; /* Texto Blanquecino */
+  --color-text-secondary: #a1a1aa; /* Texto secundario */
+  --color-surface: #12122a; /* Superficie oscura */
+  --color-surface-secondary: #18183b; /* Superficie secundaria */
+  
+  /* Tipografías */
   --font-heading: "Oswald", sans-serif;
   --font-body: "Roboto", sans-serif;
+  
+  /* Espaciados */
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 1.5rem;
+  --spacing-lg: 2rem;
+  --spacing-xl: 3rem;
+  --spacing-xxl: 4rem;
+  
+  /* Transiciones */
+  --transition-fast: 0.2s ease-in-out;
+  --transition-normal: 0.3s ease-in-out;
+  --transition-slow: 0.5s ease-in-out;
 }
 
-/* Base y Tipografía */
+/* =====================================================
+   RESET Y BASE STYLES
+   ===================================================== */
+   
+* {
+  box-sizing: border-box;
+}
+
 body {
   background-color: var(--color-bg);
   color: var(--color-text);
   font-family: var(--font-body);
   margin: 0;
+  padding: 0;
   line-height: 1.6;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-h1,
-h2,
-h3 {
+h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-heading);
   color: var(--color-primary);
   text-transform: uppercase;
   letter-spacing: 2px;
+  margin: 0 0 var(--spacing-md) 0;
+  line-height: 1.2;
+}
+
+h1 { font-size: 2.5rem; }
+h2 { font-size: 2rem; }
+h3 { font-size: 1.5rem; }
+h4 { font-size: 1.25rem; }
+
+p {
+  margin: 0 0 var(--spacing-md) 0;
+  color: var(--color-text);
 }
 
 a {
   color: var(--color-primary);
   text-decoration: none;
-  transition: color 0.3s;
+  transition: color var(--transition-normal);
 }
 
 a:hover {
   color: var(--color-secondary);
 }
 
-/* 1. Contenedor de Ancho Variable (Requisito) */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* =====================================================
+   CONTENEDOR PRINCIPAL - ANCHO VARIABLE 1000-2000px
+   ===================================================== */
+   
 .site-container {
   max-width: 2000px;
   min-width: 1000px;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 var(--spacing-lg);
   display: flex;
   flex-direction: column;
-  min-height: 100vh; /* Para que el footer esté abajo */
+  min-height: 100vh;
+  background: linear-gradient(135deg, var(--color-bg) 0%, #0f0f2a 100%);
 }
 
 .site-content {
-  flex-grow: 1; /* Ocupa el espacio restante */
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
 }
 
-/* 2. HEADER y NAV (Flexbox Principal) */
+/* =====================================================
+   HEADER Y NAVEGACIÓN - FLEXBOX LAYOUT
+   ===================================================== */
+
 .main-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 0;
-  border-bottom: 2px solid var(--color-primary); /* Línea futurista */
-  margin-bottom: 40px;
+  padding: var(--spacing-lg) 0;
+  border-bottom: 2px solid var(--color-primary);
+  margin-bottom: var(--spacing-xl);
+  position: relative;
+  background: rgba(18, 18, 42, 0.8);
+  backdrop-filter: blur(10px);
+  border-radius: 0 0 var(--spacing-sm) var(--spacing-sm);
 }
 
+/* Logo con Flexbox */
 .logo {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
   font-size: 1.5rem;
   font-weight: 700;
+  font-family: var(--font-heading);
+  color: var(--color-primary);
+  transition: transform var(--transition-normal);
 }
 
-.main-nav .nav-list {
+.logo:hover {
+  transform: scale(1.05);
+  color: var(--color-primary);
+}
+
+.logo i {
+  font-size: 2rem;
+  color: var(--color-secondary);
+}
+
+/* Navegación Principal - Flexbox */
+.main-nav {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.nav-list {
   display: flex;
   list-style: none;
   padding: 0;
-  gap: 30px;
+  margin: 0;
+  gap: var(--spacing-xl);
+  align-items: center;
 }
 
-/* Interacción de Menú (inspirado en css3-menu-generator) */
+/* Menú CSS3 con interacciones avanzadas */
+.nav-list li {
+  position: relative;
+}
+
 .nav-list li a {
   position: relative;
-  padding: 10px 5px;
+  padding: var(--spacing-sm) var(--spacing-md);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 500;
+  border-radius: var(--spacing-xs);
+  transition: all var(--transition-normal);
+  overflow: hidden;
+}
+
+/* Efecto de subrayado animado */
+.nav-list li a::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--color-secondary), var(--color-primary));
+  transition: all var(--transition-normal);
+  transform: translateX(-50%);
+}
+
+.nav-list li a:hover::before {
+  width: 100%;
+}
+
+/* Efecto de fondo para hover */
+.nav-list li a::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(0, 255, 194, 0.1), rgba(255, 71, 136, 0.1));
+  opacity: 0;
+  transition: opacity var(--transition-normal);
+  z-index: -1;
+}
+
+.nav-list li a:hover::after {
+  opacity: 1;
+}
+
+/* Botón especial de deploy */
+.nav-link-deploy {
+  background: linear-gradient(135deg, var(--color-secondary), var(--color-tertiary)) !important;
+  padding: var(--spacing-sm) var(--spacing-md) !important;
+  border-radius: var(--spacing-xs) !important;
+  color: white !important;
+  font-weight: bold !important;
+  box-shadow: 0 4px 15px rgba(255, 71, 136, 0.3);
+  transform: translateY(0);
+  transition: all var(--transition-normal);
+}
+
+.nav-link-deploy:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 6px 20px rgba(255, 71, 136, 0.4) !important;
+  color: white !important;
+}
+
+/* Widget IMI - Flexbox Avanzado */
+.imi-status-widget {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  font-size: 0.9rem;
+  background: linear-gradient(135deg, var(--color-surface-secondary), var(--color-surface));
+  padding: var(--spacing-sm) var(--spacing-md);
+  border-radius: var(--spacing-sm);
+  border: 1px solid var(--color-primary);
+  box-shadow: 0 4px 15px rgba(0, 255, 194, 0.2);
+  transition: all var(--transition-normal);
+}
+
+.imi-status-widget:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 255, 194, 0.3);
+}
+
+.imi-label {
+  font-weight: 600;
+  color: var(--color-primary);
   text-transform: uppercase;
   letter-spacing: 1px;
 }
 
-.nav-list li a:after {
-  content: "";
-  display: block;
-  width: 0;
-  height: 2px;
-  background: var(--color-secondary);
-  transition: width 0.3s;
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-.nav-list li a:hover:after {
-  width: 100%;
-}
-
-.nav-link-deploy {
-  background: var(--color-secondary);
-  padding: 8px 15px;
-  border-radius: 4px;
-  color: var(--color-bg) !important;
-  font-weight: bold;
-}
-
-.nav-link-deploy:hover {
-  opacity: 0.9;
-}
-
-/* Widget IMI (Flexbox) */
-.imi-status-widget {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-size: 0.9rem;
-  background: #18183b;
-  padding: 8px 15px;
-  border-radius: 4px;
-  border: 1px solid var(--color-primary);
-}
-
 .imi-bar-container {
   width: 100px;
-  height: 10px;
-  background: #2d2d50;
-  border-radius: 5px;
+  height: 12px;
+  background: var(--color-surface);
+  border-radius: 6px;
   overflow: hidden;
+  position: relative;
+  border: 1px solid rgba(0, 255, 194, 0.3);
 }
 
 .imi-bar-fill {
   height: 100%;
-  background: var(--color-primary);
-  transition: width 0.5s ease-in-out;
+  background: linear-gradient(90deg, var(--color-primary), var(--color-secondary));
+  transition: width var(--transition-slow);
+  position: relative;
+  box-shadow: 0 0 10px rgba(0, 255, 194, 0.5);
 }
 
-/* 3. HERO Section */
+.imi-bar-fill::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+#imi-percentage {
+  font-weight: 700;
+  color: var(--color-secondary);
+  text-shadow: 0 0 10px rgba(255, 71, 136, 0.5);
+}
+
+/* =====================================================
+   SECCIÓN HERO - FLEXBOX CENTRADO
+   ===================================================== */
+
 .hero-section {
-  padding: 80px 0;
+  padding: var(--spacing-xxl) 0;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(ellipse at center, rgba(0, 255, 194, 0.1) 0%, transparent 70%);
+  border-radius: var(--spacing-md);
+  margin-bottom: var(--spacing-xl);
 }
 
 .hero-section h1 {
-  font-size: 3rem;
-  margin-bottom: 20px;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  margin-bottom: var(--spacing-lg);
+  background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-align: center;
+  max-width: 800px;
 }
 
+.hero-section p {
+  font-size: 1.2rem;
+  color: var(--color-text-secondary);
+  margin-bottom: var(--spacing-xl);
+  max-width: 600px;
+  line-height: 1.8;
+}
+
+.cta-row {
+  display: flex;
+  justify-content: center;
+  gap: var(--spacing-md);
+  flex-wrap: wrap;
+}
+
+/* =====================================================
+   BOTONES CON FLEXBOX Y EFECTOS MODERNOS
+   ===================================================== */
+
 .btn {
-  padding: 12px 25px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-xs);
+  padding: var(--spacing-md) var(--spacing-xl);
   border: none;
-  border-radius: 4px;
+  border-radius: var(--spacing-sm);
   cursor: pointer;
-  font-weight: bold;
+  font-weight: 600;
   text-transform: uppercase;
-  transition: transform 0.2s;
+  letter-spacing: 1px;
+  transition: all var(--transition-normal);
+  position: relative;
+  overflow: hidden;
+  font-family: var(--font-heading);
+  text-decoration: none;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left var(--transition-slow);
+}
+
+.btn:hover::before {
+  left: 100%;
 }
 
 .btn-primary {
-  background-color: var(--color-primary);
+  background: linear-gradient(135deg, var(--color-primary), var(--color-tertiary));
   color: var(--color-bg);
+  border: 2px solid transparent;
 }
 
-.btn:hover {
+.btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(0, 255, 194, 0.4);
+  background: linear-gradient(135deg, var(--color-tertiary), var(--color-primary));
+}
+
+.btn-vote {
+  background: linear-gradient(135deg, var(--color-secondary), var(--color-tertiary));
+  color: white;
+  font-size: 0.9rem;
+  padding: var(--spacing-sm) var(--spacing-md);
+}
+
+.btn-vote:hover {
   transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255, 71, 136, 0.4);
 }
 
-/* 4. Contenido (Grid para Artículos Repetidos) */
+/* =====================================================
+   GRID DE ARTÍCULOS - FLEXBOX/GRID HÍBRIDO
+   ===================================================== */
+
+.content-section {
+  padding: var(--spacing-xxl) 0;
+  margin-bottom: var(--spacing-xl);
+}
+
 .articles-grid {
-  padding: 60px 0;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 40px;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: var(--spacing-xl);
+  margin-top: var(--spacing-xl);
 }
 
-.product-card {
-  padding: 20px;
-  border: 1px solid rgba(0, 255, 194, 0.3);
-  border-radius: 8px;
-  background: #12122a;
+.articles-grid h2 {
+  grid-column: 1 / -1;
   text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: var(--spacing-lg);
+  position: relative;
+}
+
+.articles-grid h2::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--color-primary), var(--color-secondary));
+  border-radius: 2px;
+}
+
+/* Tarjetas de productos con Flexbox */
+.product-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: var(--spacing-xl);
+  border: 1px solid rgba(0, 255, 194, 0.3);
+  border-radius: var(--spacing-md);
+  background: linear-gradient(135deg, var(--color-surface), var(--color-surface-secondary));
+  backdrop-filter: blur(10px);
+  transition: all var(--transition-normal);
+  position: relative;
+  overflow: hidden;
+}
+
+.product-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--color-primary), var(--color-secondary));
+  transform: scaleX(0);
+  transition: transform var(--transition-normal);
+}
+
+.product-card:hover::before {
+  transform: scaleX(1);
+}
+
+.product-card:hover {
+  transform: translateY(-10px);
+  border-color: var(--color-primary);
+  box-shadow: 0 20px 40px rgba(0, 255, 194, 0.2);
 }
 
 .product-card i {
-  font-size: 2.5rem;
+  font-size: 3rem;
   color: var(--color-secondary);
-  margin-bottom: 15px;
+  margin-bottom: var(--spacing-md);
+  transition: all var(--transition-normal);
 }
 
-/* 5. ASIDE y Voto Ético */
+.product-card:hover i {
+  transform: scale(1.1) rotate(5deg);
+  color: var(--color-primary);
+}
+
+.product-card h3 {
+  margin-bottom: var(--spacing-md);
+  color: var(--color-primary);
+}
+
+.product-card p {
+  color: var(--color-text-secondary);
+  margin-bottom: var(--spacing-lg);
+  flex-grow: 1;
+  line-height: 1.6;
+}
+
+.product-card a {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  padding: var(--spacing-sm) var(--spacing-md);
+  background: rgba(0, 255, 194, 0.1);
+  border: 1px solid var(--color-primary);
+  border-radius: var(--spacing-xs);
+  color: var(--color-primary);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all var(--transition-normal);
+}
+
+.product-card a:hover {
+  background: var(--color-primary);
+  color: var(--color-bg);
+  transform: translateY(-2px);
+}
+
+/* =====================================================
+   ASIDE - SECCIÓN PROMOCIONAL CON FLEXBOX
+   ===================================================== */
+
 .promo-aside {
-  background: #18183b;
-  padding: 30px;
-  margin: 40px 0;
-  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   text-align: center;
+  background: linear-gradient(135deg, var(--color-surface-secondary), var(--color-surface));
+  padding: var(--spacing-xxl);
+  margin: var(--spacing-xxl) 0;
+  border-radius: var(--spacing-md);
   border-left: 5px solid var(--color-primary);
+  border-right: 5px solid var(--color-secondary);
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(10px);
+}
+
+.promo-aside::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 50% 50%, rgba(0, 255, 194, 0.1), transparent 70%);
+  z-index: -1;
+}
+
+.promo-aside h3 {
+  font-size: 2rem;
+  margin-bottom: var(--spacing-lg);
+  background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.promo-aside p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  margin-bottom: var(--spacing-xl);
+  max-width: 600px;
+  color: var(--color-text-secondary);
 }
 
 .vote-buttons {
   display: flex;
   justify-content: center;
-  gap: 20px;
-  margin-top: 20px;
+  gap: var(--spacing-lg);
+  margin: var(--spacing-xl) 0;
+  flex-wrap: wrap;
 }
 
-.btn-vote {
-  background: var(--color-secondary);
-  color: white;
-  font-size: 0.9rem;
+.promo-aside img {
+  width: 100%;
+  max-width: 400px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: var(--spacing-md);
+  margin-top: var(--spacing-xl);
+  border: 2px solid rgba(0, 255, 194, 0.3);
+  transition: all var(--transition-normal);
 }
 
-/* 6. FOOTER (Flexbox) */
+.promo-aside img:hover {
+  transform: scale(1.05);
+  border-color: var(--color-primary);
+  box-shadow: 0 15px 30px rgba(0, 255, 194, 0.3);
+}
+
+/* =====================================================
+   FOOTER - FLEXBOX LAYOUT RESPONSIVO
+   ===================================================== */
+
 .main-footer {
   display: flex;
-  justify-content: space-around;
-  padding: 40px 0;
-  margin-top: 40px;
-  background-color: #050510;
-  border-top: 1px dashed var(--color-primary);
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: var(--spacing-xl);
+  padding: var(--spacing-xxl) 0;
+  margin-top: var(--spacing-xxl);
+  background: linear-gradient(135deg, #050510, var(--color-surface));
+  border-top: 1px solid var(--color-primary);
+  border-radius: var(--spacing-md) var(--spacing-md) 0 0;
+  position: relative;
+}
+
+.main-footer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--color-primary), var(--color-secondary), var(--color-tertiary));
 }
 
 .footer-col {
-  flex-basis: 20%;
+  flex: 1;
+  min-width: 200px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
 }
 
 .footer-col h4 {
-  margin-bottom: 15px;
+  margin-bottom: var(--spacing-md);
   color: var(--color-secondary);
+  font-size: 1.1rem;
+  position: relative;
+  padding-bottom: var(--spacing-xs);
+}
+
+.footer-col h4::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 50px;
+  height: 2px;
+  background: linear-gradient(90deg, var(--color-secondary), var(--color-primary));
+  border-radius: 1px;
 }
 
 .footer-col a {
-  display: block;
-  margin-bottom: 8px;
+  color: var(--color-text-secondary);
+  padding: var(--spacing-xs) 0;
+  transition: all var(--transition-normal);
+  position: relative;
 }
 
-.social-icons a {
-  display: inline-block;
+.footer-col a:hover {
+  color: var(--color-primary);
+  padding-left: var(--spacing-sm);
+}
+
+.footer-col a::before {
+  content: "▶";
+  position: absolute;
+  left: 0;
+  opacity: 0;
+  transition: opacity var(--transition-normal);
+  color: var(--color-secondary);
+  font-size: 0.8rem;
+}
+
+.footer-col a:hover::before {
+  opacity: 1;
+}
+
+/* Iconos sociales con Flexbox */
+.social-links {
+  display: flex;
+  gap: var(--spacing-md);
+  margin: var(--spacing-md) 0;
+  flex-wrap: wrap;
+}
+
+.social-links a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(135deg, var(--color-surface), var(--color-surface-secondary));
+  border: 1px solid rgba(0, 255, 194, 0.3);
+  border-radius: 50%;
+  color: var(--color-primary);
   font-size: 1.5rem;
-  margin-right: 15px;
+  transition: all var(--transition-normal);
+  position: relative;
+  overflow: hidden;
+}
+
+.social-links a::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+  opacity: 0;
+  transition: opacity var(--transition-normal);
+  border-radius: 50%;
+}
+
+.social-links a:hover::before {
+  opacity: 1;
+}
+
+.social-links a i {
+  position: relative;
+  z-index: 1;
+  transition: color var(--transition-normal);
+}
+
+.social-links a:hover i {
+  color: white;
+}
+
+.social-links a:hover {
+  transform: translateY(-5px) scale(1.1);
+  box-shadow: 0 10px 20px rgba(0, 255, 194, 0.3);
+}
+
+.footer-col p {
+  color: var(--color-text-secondary);
+  font-size: 0.9rem;
+  margin-top: var(--spacing-md);
+  text-align: center;
+}
+
+/* =====================================================
+   UTILIDADES FLEXBOX
+   ===================================================== */
+
+.flex { display: flex; }
+.flex-col { flex-direction: column; }
+.flex-row { flex-direction: row; }
+.flex-wrap { flex-wrap: wrap; }
+.flex-nowrap { flex-wrap: nowrap; }
+
+.justify-start { justify-content: flex-start; }
+.justify-center { justify-content: center; }
+.justify-end { justify-content: flex-end; }
+.justify-between { justify-content: space-between; }
+.justify-around { justify-content: space-around; }
+.justify-evenly { justify-content: space-evenly; }
+
+.items-start { align-items: flex-start; }
+.items-center { align-items: center; }
+.items-end { align-items: flex-end; }
+.items-stretch { align-items: stretch; }
+
+.flex-1 { flex: 1; }
+.flex-auto { flex: auto; }
+.flex-none { flex: none; }
+
+/* Gaps */
+.gap-xs { gap: var(--spacing-xs); }
+.gap-sm { gap: var(--spacing-sm); }
+.gap-md { gap: var(--spacing-md); }
+.gap-lg { gap: var(--spacing-lg); }
+.gap-xl { gap: var(--spacing-xl); }
+
+/* =====================================================
+   MEDIA QUERIES - RESPONSIVE DESIGN
+   ===================================================== */
+
+/* Tablet y pantallas medianas */
+@media (max-width: 1200px) {
+  .site-container {
+    min-width: 800px;
+    padding: 0 var(--spacing-md);
+  }
+  
+  .main-header {
+    flex-direction: column;
+    gap: var(--spacing-lg);
+    text-align: center;
+  }
+  
+  .nav-list {
+    gap: var(--spacing-lg);
+  }
+  
+  .articles-grid {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-lg);
+  }
+  
+  .main-footer {
+    flex-direction: column;
+    text-align: center;
+    gap: var(--spacing-lg);
+  }
+  
+  .vote-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+/* Móviles */
+@media (max-width: 768px) {
+  .site-container {
+    min-width: 320px;
+    padding: 0 var(--spacing-sm);
+  }
+  
+  .main-header {
+    padding: var(--spacing-md) 0;
+  }
+  
+  .nav-list {
+    flex-direction: column;
+    gap: var(--spacing-md);
+  }
+  
+  .hero-section {
+    padding: var(--spacing-xl) 0;
+  }
+  
+  .hero-section h1 {
+    font-size: 2rem;
+  }
+  
+  .articles-grid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-md);
+  }
+  
+  .imi-status-widget {
+    flex-direction: column;
+    gap: var(--spacing-xs);
+    text-align: center;
+  }
+  
+  .social-links {
+    justify-content: center;
+  }
+  
+  .promo-aside {
+    padding: var(--spacing-lg);
+  }
+  
+  .vote-buttons {
+    gap: var(--spacing-sm);
+  }
+  
+  .btn {
+    padding: var(--spacing-sm) var(--spacing-md);
+    font-size: 0.9rem;
+  }
+}
+
+/* =====================================================
+   ANIMACIONES Y EFECTOS ESPECIALES
+   ===================================================== */
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+@keyframes glow {
+  0%, 100% {
+    box-shadow: 0 0 5px var(--color-primary);
+  }
+  50% {
+    box-shadow: 0 0 20px var(--color-primary), 0 0 30px var(--color-primary);
+  }
+}
+
+/* Animaciones on scroll */
+.content-section {
+  animation: fadeInUp 0.8s ease-out;
+}
+
+.product-card {
+  animation: fadeInUp 0.8s ease-out;
+  animation-delay: calc(var(--animation-order, 0) * 0.1s);
+}
+
+/* Estados de focus para accesibilidad */
+.btn:focus,
+.nav-list a:focus,
+.footer-col a:focus {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+/* Efectos de scroll suave */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Estados de loading */
+.loading {
+  animation: pulse 1.5s infinite;
+}
+
+/* Hover effects para elementos interactivos */
+.product-card,
+.btn,
+.nav-list a,
+.social-links a {
+  will-change: transform;
+}
+
+/* =====================================================
+   PRINT STYLES
+   ===================================================== */
+   
+@media print {
+  .main-header,
+  .main-footer,
+  .promo-aside,
+  .btn {
+    display: none !important;
+  }
+  
+  .site-container {
+    min-width: auto;
+    max-width: none;
+    background: white;
+    color: black;
+  }
+  
+  .product-card {
+    break-inside: avoid;
+    border: 1px solid #ccc;
+    background: white;
+  }
 }
