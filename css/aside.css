@@ -1,0 +1,84 @@
+/* =====================================================
+   ASIDE - SECCIÓN PROMOCIONAL CON FLEXBOX
+   ===================================================== */
+
+.promo-aside {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background: linear-gradient(
+    135deg,
+    var(--color-surface-secondary),
+    var(--color-surface)
+  );
+  padding: var(--spacing-xxl);
+  margin: var(--spacing-xxl) 0;
+  border-radius: var(--spacing-md);
+  border-left: 5px solid var(--color-primary);
+  border-right: 5px solid var(--color-secondary);
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(10px);
+}
+
+.promo-aside::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(
+    circle at 50% 50%,
+    rgba(0, 255, 194, 0.1),
+    transparent 70%
+  );
+  z-index: -1;
+}
+
+.promo-aside h3 {
+  font-size: 2rem;
+  margin-bottom: var(--spacing-lg);
+  background: linear-gradient(
+    135deg,
+    var(--color-primary),
+    var(--color-secondary)
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.promo-aside p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  margin-bottom: var(--spacing-xl);
+  max-width: 600px;
+  color: var(--color-text-secondary);
+}
+
+.vote-buttons {
+  display: flex;
+  justify-content: center;
+  gap: var(--spacing-lg);
+  margin: var(--spacing-xl) 0;
+  flex-wrap: wrap;
+}
+
+.promo-aside img {
+  width: 100%;
+  max-width: 400px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: var(--spacing-md);
+  margin-top: var(--spacing-xl);
+  border: 2px solid rgba(0, 255, 194, 0.3);
+  transition: all var(--transition-normal);
+}
+
+.promo-aside img:hover {
+  transform: scale(1.05);
+  border-color: var(--color-primary);
+  box-shadow: 0 15px 30px rgba(0, 255, 194, 0.3);
+}

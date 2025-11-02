@@ -1,0 +1,143 @@
+/* =====================================================
+   GRID DE ARTÍCULOS - FLEXBOX/GRID HÍBRIDO
+   ===================================================== */
+
+/* Sección de contenido con espaciado y margen inferior */
+.content-section {
+  padding: var(--spacing-xxl) 0; /* Espaciado superior e inferior */
+  margin-bottom: var(--spacing-xl); /* Margen inferior grande */
+}
+
+/* Grid de artículos con diseño responsivo */
+.articles-grid {
+  display: grid; /* Usar grid layout */
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); /* Columnas adaptables */
+  gap: var(--spacing-xl); /* Espaciado entre elementos */
+  margin-top: var(--spacing-xl); /* Margen superior grande */
+}
+
+/* Estilo para el título dentro del grid */
+.articles-grid h2 {
+  grid-column: 1 / -1; /* Ocupa todas las columnas */
+  text-align: center; /* Centrar texto */
+  font-size: 2.5rem; /* Tamaño de fuente grande */
+  margin-bottom: var(--spacing-lg); /* Margen inferior */
+  position: relative; /* Posicionamiento relativo para el pseudo-elemento */
+}
+
+/* Línea decorativa debajo del título */
+.articles-grid h2::after {
+  content: ""; /* Contenido vacío para la línea */
+  position: absolute; /* Posicionamiento absoluto */
+  bottom: -10px; /* Posición debajo del texto */
+  left: 50%; /* Centrar horizontalmente */
+  transform: translateX(-50%); /* Ajustar posición al centro */
+  width: 100px; /* Ancho de la línea */
+  height: 3px; /* Altura de la línea */
+  background: linear-gradient( /* Gradiente de colores */
+    90deg,
+    var(--color-primary),
+    var(--color-secondary)
+  );
+  border-radius: 2px; /* Bordes redondeados */
+}
+
+/* Tarjetas de productos con diseño Flexbox */
+.product-card {
+  display: flex; /* Usar flexbox */
+  flex-direction: column; /* Dirección de los elementos en columna */
+  align-items: center; /* Centrar elementos horizontalmente */
+  text-align: center; /* Centrar texto */
+  padding: var(--spacing-xl); /* Espaciado interno */
+  border: 1px solid rgba(0, 255, 194, 0.3); /* Borde con color semitransparente */
+  border-radius: var(--spacing-md); /* Bordes redondeados */
+  background: linear-gradient( /* Fondo con gradiente */
+    135deg,
+    var(--color-surface),
+    var(--color-surface-secondary)
+  );
+  backdrop-filter: blur(10px); /* Efecto de desenfoque */
+  transition: all var(--transition-normal); /* Transición suave */
+  position: relative; /* Posicionamiento relativo */
+  overflow: hidden; /* Ocultar contenido desbordado */
+}
+
+/* Línea decorativa en la parte superior de la tarjeta */
+.product-card::before {
+  content: ""; /* Contenido vacío para la línea */
+  position: absolute; /* Posicionamiento absoluto */
+  top: 0; /* Posición en la parte superior */
+  left: 0; /* Alinear a la izquierda */
+  right: 0; /* Alinear a la derecha */
+  height: 3px; /* Altura de la línea */
+  background: linear-gradient( /* Gradiente de colores */
+    90deg,
+    var(--color-primary),
+    var(--color-secondary)
+  );
+  transform: scaleX(0); /* Escalar a 0 inicialmente */
+  transition: transform var(--transition-normal); /* Transición suave */
+}
+
+/* Animación al pasar el cursor sobre la tarjeta */
+.product-card:hover::before {
+  transform: scaleX(1); /* Escalar a tamaño completo */
+}
+
+/* Efecto hover en la tarjeta */
+.product-card:hover {
+  transform: translateY(-10px); /* Mover hacia arriba */
+  border-color: var(--color-primary); /* Cambiar color del borde */
+  box-shadow: 0 20px 40px rgba(0, 255, 194, 0.2); /* Añadir sombra */
+}
+
+/* Icono dentro de la tarjeta */
+.product-card i {
+  font-size: 3rem; /* Tamaño grande del icono */
+  color: var(--color-secondary); /* Color del icono */
+  margin-bottom: var(--spacing-md); /* Margen inferior */
+  transition: all var(--transition-normal); /* Transición suave */
+}
+
+/* Efecto hover en el icono */
+.product-card:hover i {
+  transform: scale(1.1) rotate(5deg); /* Escalar y rotar ligeramente */
+  color: var(--color-primary); /* Cambiar color del icono */
+}
+
+/* Título dentro de la tarjeta */
+.product-card h3 {
+  margin-bottom: var(--spacing-md); /* Margen inferior */
+  color: var(--color-primary); /* Color del texto */
+}
+
+/* Descripción dentro de la tarjeta */
+.product-card p {
+  color: var(--color-text-secondary); /* Color del texto */
+  margin-bottom: var(--spacing-lg); /* Margen inferior */
+  flex-grow: 1; /* Permitir que crezca para llenar el espacio */
+  line-height: 1.6; /* Altura de línea */
+}
+
+/* Enlace dentro de la tarjeta */
+.product-card a {
+  display: inline-flex; /* Usar flexbox en línea */
+  align-items: center; /* Centrar elementos verticalmente */
+  gap: var(--spacing-xs); /* Espaciado entre elementos */
+  padding: var(--spacing-sm) var(--spacing-md); /* Espaciado interno */
+  background: rgba(0, 255, 194, 0.1); /* Fondo semitransparente */
+  border: 1px solid var(--color-primary); /* Borde con color primario */
+  border-radius: var(--spacing-xs); /* Bordes redondeados */
+  color: var(--color-primary); /* Color del texto */
+  font-weight: 600; /* Texto en negrita */
+  text-transform: uppercase; /* Texto en mayúsculas */
+  letter-spacing: 1px; /* Espaciado entre letras */
+  transition: all var(--transition-normal); /* Transición suave */
+}
+
+/* Efecto hover en el enlace */
+.product-card a:hover {
+  background: var(--color-primary); /* Cambiar fondo */
+  color: var(--color-bg); /* Cambiar color del texto */
+  transform: translateY(-2px); /* Mover ligeramente hacia arriba */
+}
