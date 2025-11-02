@@ -7,6 +7,9 @@
 # ARCHIVOS DEL SISTEMA OPERATIVO
 # =====================================================
 
+# GitHub workflows y configuraciones
+.github/
+
 # Windows
 Thumbs.db
 ehthumbs.db
@@ -40,11 +43,6 @@ Icon?
 
 # Visual Studio Code
 .vscode/
-!.vscode/settings.json
-!.vscode/tasks.json
-!.vscode/launch.json
-!.vscode/extensions.json
-!.vscode/*.code-snippets
 
 # Local History for Visual Studio Code
 .history/
@@ -154,9 +152,6 @@ coverage/
 # =====================================================
 # SERVIDORES DE DESARROLLO LOCAL
 # =====================================================
-
-# Live Server
-.vscode/settings.json
 
 # Five Server
 .fiveserver
