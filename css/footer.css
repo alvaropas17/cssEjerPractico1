@@ -111,7 +111,7 @@
   border-radius: 50%;
   color: var(--color-primary);
   font-size: 1.5rem;
-  transition: all var(--transition-normal);
+  /* transition: all var(--transition-normal); */
   position: relative;
   overflow: hidden;
 }
@@ -123,13 +123,13 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(
+  /* background: linear-gradient(
     135deg,
     var(--color-primary),
     var(--color-secondary)
-  );
+  ); */
   opacity: 0;
-  transition: opacity var(--transition-normal);
+  /* transition: opacity var(--transition-normal); */
   border-radius: 50%;
 }
 
@@ -140,7 +140,7 @@
 .social-links a i {
   position: relative;
   z-index: 1;
-  transition: color var(--transition-normal);
+  /* transition: color var(--transition-normal); */
 }
 
 .social-links a:hover i {
@@ -148,7 +148,7 @@
 }
 
 .social-links a:hover {
-  transform: translateY(-5px) scale(1.1);
+  /* transform: translateY(-5px) scale(1.1); */
   box-shadow: 0 10px 20px rgba(0, 255, 194, 0.3);
 }
 

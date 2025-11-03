@@ -14,7 +14,7 @@
   --color-surface-secondary: #18183b; /* Superficie secundaria */
 
   /* Tipografías */
-  --font-heading: "Oswald", sans-serif;
+  --font-heading: "batmfa", sans-serif;
   --font-body: "Roboto", sans-serif;
 
   /* Espaciados */
@@ -29,6 +29,11 @@
   --transition-fast: 0.2s ease-in-out;
   --transition-normal: 0.3s ease-in-out;
   --transition-slow: 0.5s ease-in-out;
+}
+
+@font-face {
+  font-family: "batmfa";
+  src: url('/fonts/batmfa__.ttf');
 }
 
 /* =====================================================
