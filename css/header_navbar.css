@@ -1,3 +1,222 @@
+/* =====================================================
+   HEADER Y NAVEGACIÓN - FLEXBOX LAYOUT
+   ===================================================== */
+
+.main-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--spacing-lg) 0;
+  border-bottom: 2px solid var(--color-primary);
+  margin-bottom: var(--spacing-xl);
+  position: relative;
+  background: rgba(18, 18, 42, 0.8);
+  backdrop-filter: blur(10px);
+  border-radius: 0 0 var(--spacing-sm) var(--spacing-sm);
+}
+
+/* Logo con Flexbox */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  font-size: 1.5rem;
+  font-weight: 700;
+  font-family: var(--font-heading);
+  color: var(--color-primary);
+  transition: transform var(--transition-normal);
+}
+
+.logo:hover {
+  transform: scale(1.05);
+  color: var(--color-primary);
+}
+
+.logo i {
+  font-size: 2rem;
+  color: var(--color-secondary);
+}
+
+/* Navegación Principal - Flexbox */
+.main-nav {
+  flex: 1;
+  display: flex;
+  justify-content: right;
+}
+
+.nav-list {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  gap: var(--spacing-xl);
+  align-items: center;
+}
+
+/* Menú CSS3 con interacciones avanzadas */
+.nav-list li {
+  position: relative;
+}
+
+.nav-list li a {
+  position: relative;
+  padding: var(--spacing-sm) var(--spacing-md);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 500;
+  border-radius: var(--spacing-xs);
+  transition: all var(--transition-normal);
+  overflow: hidden;
+}
+
+/* Efecto de subrayado animado */
+.nav-list li a::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    var(--color-secondary),
+    var(--color-primary)
+  );
+  transition: all var(--transition-normal);
+  transform: translateX(-50%);
+}
+
+.nav-list li a:hover::before {
+  width: 100%;
+}
+
+/* Efecto de fondo para hover */
+.nav-list li a::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    135deg,
+    rgba(0, 255, 194, 0.1),
+    rgba(255, 71, 136, 0.1)
+  );
+  opacity: 0;
+  transition: opacity var(--transition-normal);
+  z-index: -1;
+}
+
+.nav-list li a:hover::after {
+  opacity: 1;
+}
+
+/* Botón especial de deploy */
+.nav-link-deploy {
+  background: linear-gradient(
+    135deg,
+    var(--color-secondary),
+    var(--color-tertiary)
+  ) !important;
+  padding: var(--spacing-sm) var(--spacing-md) !important;
+  border-radius: var(--spacing-xs) !important;
+  color: white !important;
+  font-weight: bold !important;
+  box-shadow: 0 4px 15px rgba(255, 71, 136, 0.3);
+  transform: translateY(0);
+  transition: all var(--transition-normal);
+}
+
+.nav-link-deploy:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 6px 20px rgba(255, 71, 136, 0.4) !important;
+  color: white !important;
+}
+
+/* Widget IMI - Flexbox Avanzado */
+.imi-status-widget {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  font-size: 0.9rem;
+  background: linear-gradient(
+    135deg,
+    var(--color-surface-secondary),
+    var(--color-surface)
+  );
+  padding: var(--spacing-sm) var(--spacing-md);
+  border-radius: var(--spacing-sm);
+  border: 1px solid var(--color-primary);
+  box-shadow: 0 4px 15px rgba(0, 255, 194, 0.2);
+  transition: all var(--transition-normal);
+}
+
+.imi-status-widget:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 255, 194, 0.3);
+}
+
+.imi-label {
+  font-weight: 600;
+  color: var(--color-primary);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.imi-bar-container {
+  width: 100px;
+  height: 12px;
+  background: var(--color-surface);
+  border-radius: 6px;
+  overflow: hidden;
+  position: relative;
+  border: 1px solid rgba(0, 255, 194, 0.3);
+}
+
+.imi-bar-fill {
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    var(--color-primary),
+    var(--color-secondary)
+  );
+  transition: width var(--transition-slow);
+  position: relative;
+  box-shadow: 0 0 10px rgba(0, 255, 194, 0.5);
+}
+
+.imi-bar-fill::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.3),
+    transparent
+  );
+  animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+#imi-percentage {
+  font-weight: 700;
+  color: var(--color-secondary);
+  text-shadow: 0 0 10px rgba(255, 71, 136, 0.5);
+}
+
 /* ===========================
    Header & Navbar
    =========================== */
