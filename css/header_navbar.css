@@ -202,6 +202,14 @@
   animation: shimmer 2s infinite;
 }
 
+#icono_inicio_sesion {
+  width: 32px;
+  height: 32px;
+  margin-right: 50px;
+  filter: drop-shadow(0 0 5px rgba(255, 71, 136, 0.5));
+  transition: transform var(--transition-normal);
+}
+
 @keyframes shimmer {
   0% {
     transform: translateX(-100%);
