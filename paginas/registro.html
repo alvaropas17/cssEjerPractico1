@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="../css/styles.css" />
     <link rel="stylesheet" href="../css/footer.css" />
     <link rel="stylesheet" href="../css/articles.css" />
+    <link rel="stylesheet" href="../css/botones.css" />
     <link rel="stylesheet" href="../css/aside.css" />
     <link rel="stylesheet" href="../css/header_navbar.css" />
     <link rel="stylesheet" href="../css/login.css" />
@@ -25,6 +26,8 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+    <script src="../js/btnMostrarContra.js" defer></script>
+    <script src="../js/emailValidation.js" defer></script>
     <title>Inicio de Sesión</title>
   </head>
   <body>
@@ -54,18 +57,6 @@
             </li> -->
         </ul>
       </nav>
-
-      <!-- <div class="imi-status-widget">
-          <span class="imi-label">IMI:</span>
-          <div class="imi-bar-container">
-            <div
-              id="imi-bar-fill"
-              class="imi-bar-fill"
-              style="width: 70%"
-            ></div>
-          </div>
-        <span id="imi-percentage">70%</span>
-        </div> -->
     </header>
 
     <main class="login-main" role="main">
@@ -77,11 +68,11 @@
         <form action="/login" method="POST" class="login-form__body">
             
             <div class="form-field">
-                <label for="username" class="form-field__label">Nombre de Usuario</label>
+                <label for="email" class="form-field__label">Correo Electrónico</label>
                 <input 
-                    type="text"
-                    id="username"
-                    name="username"
+                    type="email"
+                    id="email"
+                    name="email"
                     class="form-field__input"
                     placeholder="tucorreo@gmail.com"
                     required
@@ -98,7 +89,32 @@
                     placeholder="••••••••"
                     required
                 >
+                <button type="button" id="toggleBtn" onclick="togglePasswordVisibility()">Mostrar</button>
+
             </div>
+            <div class="form-field">
+                <label for="password2" class="form-field__label">Repita la contraseña</label>
+                <input
+                    type="password"
+                    id="password2"
+                    name="password2"
+                    class="form-field__input"
+                    placeholder="••••••••"
+                    required
+                >
+                <button type="button" id="toggleBtn2" onclick="togglePasswordVisibility2()">Mostrar</button>
+            </div>
+
+            <!-- Aviso legal de protección de datos -->
+    <div class="form-legal">
+        <p class="form-legal__text">
+            <input type="checkbox" name="lopd" id="lopd" required>
+            Al registrarte, aceptas nuestra 
+            <a href="../paginas/politicaPrivacidad.html" class="form-legal__link">Política de Privacidad</a> 
+            y confirmas que has leído nuestro 
+            <a href="../paginas/avisoLegal.html" class="form-legal__link">Aviso Legal</a>.
+        </p>
+    </div>
 
             <div class="login-form__actions">
                 <button type="submit" class="btn btn--primary login-form__button">
