@@ -1,61 +1,56 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../css/base/normalize.css" />
-    <link rel="stylesheet" href="../css/styles.css" />
-    <link rel="stylesheet" href="../css/footer.css" />
-    <link rel="stylesheet" href="../css/articles.css" />
-    <link rel="stylesheet" href="../css/aside.css" />
-    <link rel="stylesheet" href="../css/header_navbar.css" />
-    <link rel="stylesheet" href="../css/login.css" />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Roboto:wght@300;400;700&display=swap"
-      rel="stylesheet"
-    />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="../css/base/normalize.css" />
+  <link rel="stylesheet" href="../css/styles.css" />
+  <link rel="stylesheet" href="../css/footer.css" />
+  <link rel="stylesheet" href="../css/articles.css" />
+  <link rel="stylesheet" href="../css/aside.css" />
+  <link rel="stylesheet" href="../css/header_navbar.css" />
+  <link rel="stylesheet" href="../css/login.css" />
 
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-      integrity="sha512-SnH5qGv7K7M805m43W9nE7+l0dE5sA6nQGgVpD1A3q2mJ5x3Uf+i6Hj5v+5M1c+3W/3S0r9Q/g8w=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-    <title>Inicio de Sesión</title>
-  </head>
-  <body>
-    <header class="main-header" role="banner">
-      <a href="../index.html" class="logo">
-        <i class="fas fa-brain"></i>
-        <strong>AI Land</strong>
-      </a>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Roboto:wght@300;400;700&display=swap"
+    rel="stylesheet" />
 
-      <nav class="main-nav" role="navigation">
-        <ul class="nav-list" data-menu-interact="css3-menu-generator">
-          <li><a href="#modulos" data-imi-action="read">Personajes</a></li>
-          <li>
-            <a href="#filosofias" data-imi-action="read"
-              >Filosofías Operativas</a
-            >
-          </li>
-          <!-- <li>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    integrity="sha512-SnH5qGv7K7M805m43W9nE7+l0dE5sA6nQGgVpD1A3q2mJ5x3Uf+i6Hj5v+5M1c+3W/3S0r9Q/g8w=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script type="module" src="../js/login.js"></script>
+  <title>Inicio de Sesión</title>
+</head>
+
+<body>
+  <header class="main-header" role="banner">
+    <a href="../index.html" class="logo">
+      <i class="fas fa-brain"></i>
+      <strong>AI Land</strong>
+    </a>
+
+    <nav class="main-nav" role="navigation">
+      <ul class="nav-list" data-menu-interact="css3-menu-generator">
+        <li><a href="#modulos" data-imi-action="read">Personajes</a></li>
+        <li>
+          <a href="#filosofias" data-imi-action="read">Filosofías Operativas</a>
+        </li>
+        <!-- <li>
               <a href="#protocolos" data-imi-action="read"
                 >Manual de Protocolos</a
               >
             </li> -->
-          <!-- <li>
+        <!-- <li>
               <a href="#deploy" class="nav-link-deploy"
                 >Desplegar Capítulo Crítico</a
               >
             </li> -->
-        </ul>
-      </nav>
+      </ul>
+    </nav>
 
-      <!-- <div class="imi-status-widget">
+    <!-- <div class="imi-status-widget">
           <span class="imi-label">IMI:</span>
           <div class="imi-bar-container">
             <div
@@ -66,52 +61,41 @@
           </div>
         <span id="imi-percentage">70%</span>
         </div> -->
-    </header>
+  </header>
 
-    <main class="login-main" role="main">
-      <section class="login-section">
-    <div class="login-form">
+  <main class="login-main" role="main">
+    <section class="login-section">
+      <div class="login-form">
         <h2 class="login-form__title">Acceso al Sistema</h2>
         <p class="login-form__subtitle">Ingresa tus credenciales para acceder al contenido</p>
 
         <form action="/login" method="POST" class="login-form__body">
-            
-            <div class="form-field">
-                <label for="username" class="form-field__label">Nombre de Usuario</label>
-                <input 
-                    type="text"
-                    id="username"
-                    name="username"
-                    class="form-field__input"
-                    placeholder="tucorreo@gmail.com"
-                    required
-                >
-            </div>
 
-            <div class="form-field">
-                <label for="password" class="form-field__label">Contraseña</label>
-                <input
-                    type="password"
-                    id="password"
-                    name="password"
-                    class="form-field__input"
-                    placeholder="••••••••"
-                    required
-                >
-            </div>
+          <div class="form-field">
+            <label for="username" class="form-field__label">Nombre de Usuario</label>
+            <input type="text" id="username" name="username" class="form-field__input" placeholder="tucorreo@gmail.com"
+              required>
+          </div>
 
-            <div class="login-form__actions">
-                <button type="submit" class="btn btn--primary login-form__button">
-                    ACCEDER
-                </button>
-            </div>
-            
-            <a href="../paginas/registro.html" class="login-form__link">¿Olvidaste tu Contraseña?</a>
+          <div class="form-field">
+            <label for="password" class="form-field__label">Contraseña</label>
+            <input type="password" id="password" name="password" class="form-field__input" placeholder="••••••••"
+              required>
+          </div>
+
+          <div class="login-form__actions">
+            <button type="submit" class="btn btn--primary login-form__button">
+              ACCEDER
+            </button>
+          </div>
+
+          <a href="../paginas/registro.html" class="login-form__link">¿Olvidaste tu Contraseña?</a>
 
         </form>
-    </div>
-</section>
       </div>
-    </main>
-  </body>
+    </section>
+    </div>
+  </main>
+</body>
+
 </html>
