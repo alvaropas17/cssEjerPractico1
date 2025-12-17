@@ -188,8 +188,8 @@ localhost.*
 # =====================================================
 
 # Archivos de notas personales
-notas.txt
-notas.md
+# notas.txt
+# notas.md
 TODO.txt
 NOTES.md
 borrador.*
