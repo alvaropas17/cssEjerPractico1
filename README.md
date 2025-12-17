@@ -2,20 +2,52 @@
 
 Un boilerplate completo para desarrollo web que utiliza **CSS3 Flexbox** como sistema principal de layout, con estructura HTML5 semántica y diseño responsive moderno.
 
+## 🌐 Demo en Vivo
+
+**Sitio desplegado**: [Ver en GitHub Pages](#) _(Actualiza esta URL después del deploy)_
+
+## 🔐 Características de Autenticación
+
+- ✅ Sistema de registro con Firebase Authentication
+- ✅ Inicio de sesión seguro
+- ✅ Base de datos Firestore para usuarios
+- ✅ Validación de correo electrónico
+- ✅ Protección de contraseñas (mínimo 6 caracteres)
+- ✅ Mensajes de error personalizados en español
+
 ## 📁 Estructura del Proyecto
 
 ```
-cssEjerPractico1/
-├── index.html                    # Archivo HTML principal con estructura semántica
+ejercicio1Paco/
+├── index.html                        # Página principal
+├── paginas/
+│   ├── registro.html                # Página de registro
+│   └── inicioSesion.html            # Página de login
 ├── css/
-│   ├── styles.css               # Estilos CSS principales con Flexbox
+│   ├── styles.css                   # Estilos CSS principales con Flexbox
+│   ├── login.css                    # Estilos del sistema de autenticación
+│   ├── header_navbar.css            # Estilos del header y navegación
+│   ├── articles.css                 # Estilos de tarjetas y artículos
+│   ├── footer.css                   # Estilos del footer
+│   ├── aside.css                    # Estilos de sección lateral
+│   ├── botones.css                  # Estilos de botones
 │   └── base/
-│       └── normalize.css        # Reset CSS para normalización de navegadores
+│       └── normalize.css            # Reset CSS
 ├── js/
-│   └── script.js               # JavaScript interactivo con efectos modernos
-├── README.md                   # Documentación del proyecto
+│   ├── firebase.js                  # Configuración y registro Firebase
+│   ├── login.js                     # Lógica de inicio de sesión
+│   ├── script.js                    # JavaScript principal
+│   ├── emailValidation.js           # Validación de emails
+│   └── btnMostrarContra.js          # Toggle de contraseña
+├── img/                             # Imágenes del proyecto
+├── fonts/                           # Fuentes personalizadas
+├── package.json                     # Dependencias del proyecto
+├── DEPLOY.md                        # Guía de despliegue en GitHub Pages
+├── README.md                        # Documentación del proyecto
 └── .github/
-    └── copilot-instructions.md # Instrucciones para GitHub Copilot
+    ├── copilot-instructions.md      # Instrucciones para GitHub Copilot
+    └── workflows/
+        └── deploy.yml               # GitHub Actions para deploy automático
 ```
 
 ## 🎯 Requisitos Cumplidos
@@ -128,12 +160,26 @@ cssEjerPractico1/
 ### Desarrollo Local
 
 ```bash
-# Clonar o descargar el proyecto
+# 1. Clonar el repositorio
+git clone https://github.com/TU-USUARIO/ejercicio1Paco.git
 cd ejercicio1Paco
 
-# Abrir con Live Server (VS Code)
-# O simplemente abrir index.html en el navegador
+# 2. Instalar dependencias (Firebase)
+npm install
+
+# 3. Abrir con Live Server (VS Code) o directamente en el navegador
+# index.html
 ```
+
+### 🚀 Desplegar en GitHub Pages
+
+**Lee la guía completa**: [DEPLOY.md](DEPLOY.md)
+
+Pasos rápidos:
+1. Configura Firebase Console (autoriza tu dominio)
+2. Sube tu código a GitHub
+3. Activa GitHub Pages en Settings → Pages
+4. ¡Listo! Tu sitio estará en `https://TU-USUARIO.github.io/ejercicio1Paco/`
 
 ### Personalización Rápida
 
@@ -141,15 +187,25 @@ cd ejercicio1Paco
 2. **Contenido**: Editar HTML manteniendo la estructura
 3. **Imágenes**: Reemplazar URLs de Unsplash por imágenes propias
 4. **Interacciones**: Ajustar JavaScript según necesidades
+5. **Firebase**: Sustituir configuración con tu propio proyecto
 
 ## 🔧 Tecnologías Utilizadas
 
+### Frontend
 - **HTML5**: Estructura semántica completa
 - **CSS3**: Flexbox, Grid, Variables, Animations
 - **JavaScript ES6+**: Interactividad moderna
+
+### Backend & Autenticación
+- **Firebase Authentication**: Sistema de login/registro
+- **Cloud Firestore**: Base de datos NoSQL en tiempo real
+- **Firebase Hosting** _(opcional)_: Alternativa a GitHub Pages
+
+### Recursos
 - **Google Fonts**: Inter y Poppins
 - **Font Awesome 6**: Iconografía completa
 - **Normalize.css**: Reset de navegadores
+- **Firebase CDN**: Imports vía CDN (compatible con GitHub Pages)
 
 ## 📖 Conceptos Flexbox Implementados
 

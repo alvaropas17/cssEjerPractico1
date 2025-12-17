@@ -7,9 +7,6 @@
 # ARCHIVOS DEL SISTEMA OPERATIVO
 # =====================================================
 
-# GitHub workflows y configuraciones
-.github/
-
 # Windows
 Thumbs.db
 ehthumbs.db
@@ -93,7 +90,7 @@ lerna-debug.log*
 .pnpm-debug.log*
 
 # Package managers
-package-lock.json
+# package-lock.json - Necesario para reproducir dependencias exactas
 yarn.lock
 pnpm-lock.yaml
 
