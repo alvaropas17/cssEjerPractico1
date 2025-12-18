@@ -1,77 +1,75 @@
-/* =====================================================
-   ESTILOS PARA ARTÍCULOS - VERSIÓN SIMPLE
-   ===================================================== */
+
 
 /* Sección principal de contenido */
 .content-section {
-  padding: 40px 0; /* Espacio arriba y abajo */
+  padding: 40px 0;
   margin-bottom: 30px; /* Espacio debajo de la sección */
 }
 
 /* Contenedor de artículos */
 .articles-grid {
-  display: flex; /* Los elementos se alinean en fila */
-  flex-wrap: wrap; /* Permite que se muevan a la siguiente línea */
-  gap: 30px; /* Espacio entre las tarjetas */
+  display: flex;
+  flex-wrap: wrap; 
+  gap: 30px;
 }
 
 /* Título principal */
 .articles-grid h2 {
-  width: 100%; /* Ocupa todo el ancho disponible */
-  text-align: center; /* Centrar el texto */
-  font-size: 2.5rem; /* Tamaño de letra grande */
-  margin-bottom: 20px; /* Espacio debajo del título */
-  color: #00ffc2; /* Color verde claro */
+  width: 100%;
+  text-align: center; 
+  font-size: 2.5rem; 
+  margin-bottom: 20px; 
+  color: #00ffc2; 
 }
 
 /* Tarjetas individuales de productos */
 .product-card {
-  display: flex; /* Los elementos internos se apilan */
-  flex-direction: column; /* Elementos en columna (uno debajo del otro) */
-  align-items: center; /* Centrar horizontalmente */
-  text-align: center; /* Centrar el texto */
-  padding: 30px; /*Espacio interno de la tarjeta */
-  border: 2px solid #00ffc2; /* Borde verde claro */
-  border-radius: 10px; /* Esquinas redondeadas */
-  background-color: #1a1a1a; /* Fondo oscuro */
-  min-width: 300px; /* Ancho mínimo de la tarjeta */
-  flex: 1; /* Las tarjetas se expanden por igual */
+  display: flex; 
+  flex-direction: column; 
+  align-items: center; 
+  text-align: center; 
+  padding: 30px; 
+  border: 2px solid #00ffc2; 
+  border-radius: 10px; 
+  background-color: #1a1a1a; 
+  min-width: 300px; 
+  flex: 1; 
 }
 
 /* Efecto cuando pasas el mouse por encima */
 .product-card:hover {
-  background-color: #2a2a2a; /* Fondo un poco más claro */
-  border-color: #ffffff; /* Borde blanco */
+  background-color: #2a2a2a; 
+  border-color: #ffffff;
 }
 
 /* Títulos dentro de las tarjetas */
 .product-card h3 {
-  margin-bottom: 15px; /* Espacio debajo del título */
-  color: #00ffc2; /* Color verde claro */
-  font-size: 1.5rem; /* Tamaño de letra mediano */
+  margin-bottom: 15px; 
+  color: #00ffc2; 
+  font-size: 1.5rem; 
 }
 
 /* Texto descriptivo */
 .product-card p {
-  color: #cccccc; /* Color gris claro */
-  margin-bottom: 20px; /* Espacio debajo del párrafo */
-  line-height: 1.5; /* Espaciado entre líneas */
-  flex-grow: 1; /* Ocupa el espacio disponible */
+  color: #cccccc;
+  margin-bottom: 20px; 
+  line-height: 1.5; 
+  flex-grow: 1; 
 }
 
 /* Texto "Más" */
 .product-card a {
-  padding: 10px 20px; /* Espacio interno del botón */
-  background-color: #00ffc2; /* Fondo verde claro */
-  color: #000000; /* Texto negro */
-  text-decoration: none; /* Sin subrayado */
-  border-radius: 5px; /* Esquinas redondeadas */
-  font-weight: bold; /* Texto en negrita */
-  text-transform: uppercase; /* Letras mayúsculas */
+  padding: 10px 20px; 
+  background-color: #00ffc2; 
+  color: #000000;
+  text-decoration: none;
+  border-radius: 5px; 
+  font-weight: bold;
+  text-transform: uppercase;
 }
 
 /* Efecto hover en los enlaces */
 .product-card a:hover {
-  background-color: #ffffff; /* Fondo blanco al pasar el mouse */
-  color: #000000; /* Texto negro */
+  background-color: #ffffff;
+  color: #000000;
 }
